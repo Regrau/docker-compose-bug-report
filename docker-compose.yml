@@ -1,0 +1,11 @@
+services:
+  web:
+    image: busybox
+    command: tail -f /dev/null
+    depends_on:
+      - db
+  db:
+    container_name: test
+    build:
+      dockerfile: Dockerfile
+      context: .
